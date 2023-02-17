@@ -3,6 +3,9 @@ import { GlowParticle } from "./glowparticle.js";
 const COLOURS = [
   { r: 45, g: 74, b: 227 }, // blue
   { r: 225, g: 104, b: 248 }, // purple
+  { r: 250, g: 255, b: 89 }, // yellow
+  { r: 44, g: 209, b: 252 }, // skyblue
+  { r: 54, g: 233, b: 84 }, //green
 ];
 
 class App {
