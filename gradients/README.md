@@ -1,1 +1,1 @@
-[gradients]('./demo.png')
+![gradients]('./demo.png')
