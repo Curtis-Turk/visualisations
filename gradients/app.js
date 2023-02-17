@@ -1,4 +1,6 @@
-const colours = [
+import { GlowParticle } from "./glowparticle.js";
+
+const COLOURS = [
   { r: 45, g: 74, b: 227 }, // blue
   { r: 225, g: 104, b: 248 }, // purple
 ];
@@ -35,10 +37,32 @@ class App {
     let curColour = 0;
     this.particles = [];
 
-    for (let i = 0; i < this.totalParticles; i++) {}
+    for (let i = 0; i < this.totalParticles; i++) {
+      const particle = new GlowParticle(
+        Math.random() * this.stageWidth,
+        Math.random() * this.stageHeight,
+        Math.random() * (this.maxRadius - this.minRadius) + this.minRadius,
+        COLOURS[curColour]
+      );
+
+      if (++curColour >= COLOURS.length) {
+        curColour = 0;
+      }
+
+      this.particles[i] = particle;
+    }
   }
 
-  animate() {}
+  animate() {
+    window.requestAnimationFrame(this.animate.bind(this));
+
+    this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
+
+    for (let i = 0; i < this.totalParticles; i++) {
+      const particle = this.particles[i];
+      particle.animate(this.ctx, this.stageWidth, this.stageHeight);
+    }
+  }
 }
 
 window.onload = () => {
