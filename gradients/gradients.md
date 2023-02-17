@@ -1,0 +1,1 @@
+[gradients]('./demo.png')
