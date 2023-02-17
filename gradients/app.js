@@ -12,7 +12,7 @@ class App {
     this.ctx = this.canvas.getContext("2d");
 
     this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
-    this.totalParticles = 1;
+    this.totalParticles = 15;
     this.particles = [];
     this.maxRadius = 90;
     this.minRadius = 40;

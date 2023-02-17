@@ -17,8 +17,8 @@ export class GlowParticle {
     this.sinValue += 0.01;
     this.radius += Math.sin(this.sinValue);
 
-    this.x = this.vx;
-    this.y = this.vy;
+    this.x += this.vx;
+    this.y += this.vy;
 
     if (this.x < 0) {
       this.vx *= -1;
