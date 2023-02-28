@@ -32,10 +32,11 @@ class FlowFieldEffect {
   }
 
   animate() {
-    console.log("animating");
+    this.#ctx.clearRect(0, 0, this.#width, this.#height);
     this.#draw(this.x, this.y);
     this.x += 1;
     this.y += 0.5;
+    console.log("animating");
     requestAnimationFrame(this.animate.bind(this));
   }
 }
