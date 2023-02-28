@@ -31,9 +31,7 @@ class FlowFieldEffect {
     this.#width = width;
     this.#height = height;
     console.log("flow field created");
-
-    this.x = 0;
-    this.y = 0;
+    this.angle = 0;
   }
 
   #draw(x, y) {
@@ -46,9 +44,12 @@ class FlowFieldEffect {
 
   animate() {
     this.#ctx.clearRect(0, 0, this.#width, this.#height);
-    this.#draw(this.x, this.y);
-    this.x += 1;
-    this.y += 0.5;
+    this.angle += 0.1;
+    this.#draw(
+      this.#width / 2 + Math.sin(this.angle) * 100,
+      this.#height / 2 + Math.cos(this.angle) * 100
+    );
+
     console.log("animating");
     flowFieldAnimation = requestAnimationFrame(this.animate.bind(this));
   }
