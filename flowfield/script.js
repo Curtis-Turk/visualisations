@@ -51,6 +51,7 @@ class FlowFieldEffect {
     this.radius = 0;
     this.vr = 0.03;
   }
+
   #createGradient() {
     this.gradient = this.#ctx.createLinearGradient(
       0,
@@ -62,7 +63,15 @@ class FlowFieldEffect {
     this.gradient.addColorStop("0.9", "#ffff33");
   }
   #drawLine(angle, x, y) {
-    const length = 20;
+    // let positionX = x;
+    // let positionY = y;
+    // let dx = mouse.x - positionX;
+    // let dy = mouse.y - positionY;
+    // let distance = dx * dy + dy * dy;
+
+    // const length = distance / 10000;
+
+    const length = 15;
     this.#ctx.beginPath();
     this.#ctx.moveTo(x, y);
     this.#ctx.lineTo(
